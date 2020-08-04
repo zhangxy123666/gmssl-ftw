@@ -1,6 +1,6 @@
 # 梳理了下完整的编译运行流程
 
-
+## GCC编译dll文件
 
     1-  先从官网下载一份干净的代码，如果中间出错或者有改动，记得删除掉从新解压  
 
@@ -31,3 +31,8 @@
     ··· 
     解决办法是把  libcrypto.lib   libcrypto-1_1-x64.dll  复制到java文件目录下 在执行就可以了 
  
+## 用vs自带的cl编译(坑比较多)
+   1- 选择VC-WIN64A
+   2- 32位用developt command prompt  64位用x64 native tools command pormpt打开执行编译
+   3- 编译还之后，在这个vs自带的cmd下执行  ，一定要在自带的cmd下执行，不然执行不了
+      cl GmSSL.c  ../libcrypto.lib /I "../include" /link /DLL /out:libgmssljni.dll && javac org/gmssl/GmSSL.java && java org.gmssl.GmSSL
