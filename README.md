@@ -30,13 +30,13 @@
 
         ··· 
         解决办法是把  libcrypto.lib   libcrypto-1_1-x64.dll  复制到java文件目录下 在执行就可以了 
- !(https://github.com/zhangxy123666/gmssl-ftw/blob/master/Popo%E6%88%AA%E5%9B%BE202084111428.png?raw=true)
+ ![image](https://github.com/zhangxy123666/gmssl-ftw/blob/master/Popo%E6%88%AA%E5%9B%BE202084111428.png?raw=true)
 ## 用vs自带的cl编译(坑比较多)
-     1- 选择VC-WIN64A  ，编译完成要复制dll文件和lib文件到java目录
+     1- 选择perl Configure VC-WIN64A   ，编译完成要复制dll文件和lib文件到java目录
    
      2- 32位用developt command prompt  64位用x64 native tools command pormpt打开执行编译  
    
      3- 编译还之后，在这个vs自带的cmd下执行  ，一定要在自带的cmd下执行，不然执行不了  
    
       cl GmSSL.c  ../libcrypto.lib /I "../include" /link /DLL /out:libgmssljni.dll && javac org/gmssl/GmSSL.java && java org.gmssl.GmSSL  
- !(https://github.com/zhangxy123666/gmssl-ftw/blob/master/Popo%E6%88%AA%E5%9B%BE202084111514.png?raw=true)
+ ![image](https://github.com/zhangxy123666/gmssl-ftw/blob/master/Popo%E6%88%AA%E5%9B%BE202084111514.png?raw=true)
